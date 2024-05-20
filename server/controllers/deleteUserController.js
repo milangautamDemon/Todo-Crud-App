@@ -5,11 +5,11 @@ import User from "../model/schemas/userModel.js";
 //connect to the route
 const router = express.Router();
 
-router.delete("/", async (req, res) =>{
+router.delete("/:id", async (req, res) =>{
     try {
 
         //receive course detail from user request
-        const { id } = req.body;
+        const id = req.params.id;
 
         //if exists throw some error message
         if (!id) {
