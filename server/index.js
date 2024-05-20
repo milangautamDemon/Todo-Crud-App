@@ -20,7 +20,7 @@ const URL = process.env.MONGO_URL;
 connectMongoDb(URL);
 
 //connection to the port
-const PORT = process.env.PORT || 6001;
+const PORT = process.env.PORT || 3001;
 
 //connection to the router
 app.use("/api", userRouter)

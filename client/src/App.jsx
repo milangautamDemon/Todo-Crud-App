@@ -1,15 +1,29 @@
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AddUser from "./pages/AddUser";
+import EditUser from "./pages/EditUser";
 
 function App() {
+  const routes = createBrowserRouter([
+    {
+      path : "/",
+      element : <HomePage />
+    },
+    {
+      path : "/add",
+      element : <AddUser />
+    },
+    {
+      path : "/edit",
+      element : <EditUser />
+    }
+  ])
 
   return (
     <>
-      <div className="
-      bg-white text-red-400 
-      border-4 border-solid border-gray-200 
-      text-center font-bold text-4xl
-      py-8 mx-8 mt-8
-      shadow-md shadow-black/30
-      ">Hello from Todo Crud APP !!!</div>
+    <div className="app">
+        <RouterProvider router={routes} />
+    </div>
     </>
   )
 }
